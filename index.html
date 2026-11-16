@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ouissal Yahyaoui — Profil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Plan : élégance professionnelle. Marine profond + rose poudré + filets dorés fins sur fond blanc chaud.
+   Couverture en deux volets (portrait dans une arche rose / nom en grande serif), puis sections aérées numérotées. */
+:root{
+  --navy:#1b2740;
+  --navy-2:#26365a;
+  --rose:#a5636c;
+  --blush:#f3e6e3;
+  --blush-2:#ead6d2;
+  --gold:#bf9f66;
+  --paper:#fbf9f7;
+  --white:#ffffff;
+  --ink:#1d2333;
+  --slate:#5a6275;
+  --line:#e9e2de;
+  --display:"Cormorant Garamond", "Didot", Georgia, serif;
+  --body:"Montserrat", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:400;font-size:.98rem;line-height:1.75}
+a{color:var(--rose)}
+:focus-visible{outline:1px solid var(--rose);outline-offset:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.over{font-size:.68rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--rose);display:inline-flex;align-items:center;gap:14px}
+.over::before{content:"";width:28px;height:1px;background:var(--gold)}
+
+/* Navigation */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:26px 0}
+.mono{font-family:var(--display);font-size:1.7rem;font-weight:500;letter-spacing:.04em;color:var(--navy)}
+.mono i{color:var(--rose)}
+.nav nav{display:flex;gap:30px;flex-wrap:wrap}
+.nav nav a{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);text-decoration:none;position:relative;padding-bottom:3px}
+.nav nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose);transition:width .3s}
+.nav nav a:hover::after{width:100%}
+
+/* Couverture */
+.cover{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,6vw,96px);align-items:center;padding:clamp(24px,4vw,40px) 0 clamp(70px,9vw,120px)}
+.portrait{position:relative;width:min(100%,430px);justify-self:center;animation:rise .9s ease-out both}
+.portrait .bg{position:absolute;inset:7% -6% -4% 6%;background:linear-gradient(170deg,var(--blush) 0%,var(--blush-2) 100%);border-radius:240px 240px 0 0}
+.portrait .ring{position:absolute;inset:-3% 5% 6% -5%;border:1px solid var(--gold);border-radius:240px 240px 0 0}
+.portrait .img{position:relative;border-radius:240px 240px 0 0;overflow:hidden;aspect-ratio:4/5;background:#f8f7f5;box-shadow:0 40px 70px -40px rgba(27,39,64,.55)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.portrait .chip{position:absolute;right:-8%;bottom:9%;background:var(--white);padding:14px 18px;box-shadow:0 18px 40px -20px rgba(27,39,64,.45);border-left:2px solid var(--rose)}
+.portrait .chip small{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.portrait .chip b{display:block;font-family:var(--display);font-size:1.35rem;font-weight:500;line-height:1.15;color:var(--navy)}
+.portrait .chip span{font-size:.76rem;color:var(--slate)}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+
+.intro h1{font-family:var(--display);font-weight:400;font-size:clamp(3.6rem,8vw,6.6rem);line-height:.92;letter-spacing:-.01em;margin:22px 0 0;color:var(--navy)}
+.intro h1 em{display:block;font-style:italic;color:var(--rose);padding-left:clamp(20px,4vw,64px)}
+.intro .role{margin:28px 0 0;font-size:.78rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--navy)}
+.intro .role span{color:var(--gold);padding:0 8px}
+.intro .pitch{font-family:var(--display);font-size:clamp(1.35rem,2.2vw,1.65rem);line-height:1.45;color:var(--slate);margin:22px 0 34px;max-width:32ch}
+.intro .pitch b{color:var(--navy);font-weight:500;font-style:italic}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;padding:15px 30px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s,border-color .3s}
+.btn.dark{background:var(--navy);color:#fff;border:1px solid var(--navy)}
+.btn.dark:hover{background:var(--rose);border-color:var(--rose)}
+.btn.light{border:1px solid var(--navy);color:var(--navy)}
+.btn.light:hover{border-color:var(--rose);color:var(--rose)}
+.socials{display:flex;gap:18px;margin-top:30px;flex-wrap:wrap}
+.socials a{font-size:.8rem;color:var(--slate);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.socials a:hover{color:var(--rose)}
+.socials svg{width:16px;height:16px;stroke:var(--rose);fill:none;stroke-width:1.6}
+
+/* Ruban chiffres */
+.ribbon{background:var(--navy);color:#fff}
+.ribbon .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fig{padding:34px 24px;border-left:1px solid rgba(255,255,255,.1);text-align:center}
+.fig:first-child{border-left:0}
+.fig b{display:block;font-family:var(--display);font-weight:400;font-size:3rem;line-height:1;font-variant-numeric:tabular-nums}
+.fig b i{font-style:italic;color:var(--gold)}
+.fig span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#b8c0d2}
+
+/* Sections */
+.sec{padding:clamp(80px,11vw,140px) 0}
+.sec.tint{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,36px);align-items:end;margin-bottom:clamp(40px,6vw,70px)}
+.sh .n{font-family:var(--display);font-style:italic;font-size:clamp(4rem,8vw,6rem);line-height:.75;color:var(--blush-2)}
+.sh h2{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;margin:10px 0 0;color:var(--navy);text-wrap:balance}
+.sh h2 em{color:var(--rose)}
+
+/* À propos */
+.about{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(30px,6vw,90px);align-items:start}
+.about blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.25;color:var(--navy);position:relative;padding-top:40px}
+.about blockquote::before{content:"“";position:absolute;top:-24px;left:-6px;font-size:6rem;color:var(--blush-2);font-style:normal;line-height:1}
+.about .txt p{margin:0 0 1.2em;color:var(--slate);max-width:60ch}
+.about .txt strong{color:var(--navy);font-weight:600}
+
+/* Projet phare */
+.feature{background:var(--navy);color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);padding:clamp(36px,6vw,72px)}
+.feature::before{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(165,99,108,.35) 0%,rgba(165,99,108,0) 70%)}
+.feature::after{content:"";position:absolute;inset:16px;border:1px solid rgba(191,159,102,.35);pointer-events:none}
+.feature > *{position:relative;z-index:1}
+.feature .over{color:#e7c3c3}
+.feature h3{font-family:var(--display);font-weight:400;font-size:clamp(3rem,6vw,4.6rem);line-height:.95;margin:18px 0 22px}
+.feature h3 em{color:#e7c3c3}
+.feature p{color:#cfd5e3;margin:0 0 14px;max-width:50ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font-size:.7rem;font-weight:500;letter-spacing:.08em;padding:6px 13px;border:1px solid var(--line);color:var(--navy);background:var(--paper)}
+.feature .tags span{border-color:rgba(255,255,255,.2);background:transparent;color:#fff}
+.steps{list-style:none;margin:0;padding:0;align-self:center;position:relative}
+.steps::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--gold),rgba(191,159,102,.15))}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:12px 0}
+.steps i{width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--gold);background:var(--navy);position:relative}
+.steps b{display:block;font-family:var(--display);font-weight:500;font-size:1.3rem;line-height:1.2}
+.steps span{font-size:.85rem;color:#b8c0d2}
+
+/* Expérience */
+.xp{display:grid;gap:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:220px 1fr;gap:clamp(20px,4vw,60px);padding:38px 0;border-bottom:1px solid var(--line)}
+.job .when{font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--rose)}
+.job .when small{display:block;font-family:var(--body);font-style:normal;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-top:4px}
+.job h3{font-family:var(--display);font-weight:500;font-size:1.75rem;line-height:1.15;margin:0;color:var(--navy)}
+.job ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.job li{position:relative;padding-left:24px;color:var(--slate);max-width:66ch}
+.job li::before{content:"";position:absolute;left:0;top:.85em;width:12px;height:1px;background:var(--gold)}
+.job li b{color:var(--navy);font-weight:600}
+
+/* Projets */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj{background:var(--white);border:1px solid var(--line);padding:clamp(26px,3.5vw,38px);display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .3s, box-shadow .3s}
+.proj::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--rose);transition:width .4s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 26px 50px -32px rgba(27,39,64,.45)}
+.proj:hover::before{width:100%}
+.proj small{font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose)}
+.proj h3{font-family:var(--display);font-weight:500;font-size:1.85rem;line-height:1.1;margin:0;color:var(--navy)}
+.proj p{margin:0;color:var(--slate);font-size:.94rem}
+.proj .tags{margin-top:auto;padding-top:8px}
+
+.proj.star{grid-column:1/-1;background:var(--blush);border-color:var(--blush-2)}
+.proj.star::before{width:100%}
+.proj.star .tags span{background:var(--white);border-color:var(--blush-2)}
+.proj .more{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);text-decoration:none;margin-top:6px}
+.proj .more:hover{color:var(--navy)}
+
+/* Stages */
+.stage{background:var(--paper);border:1px solid var(--line);padding:clamp(24px,4vw,44px);margin-bottom:28px}
+.stage:last-child{margin-bottom:0}
+.stage-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding-bottom:22px;margin-bottom:26px;border-bottom:1px solid var(--gold)}
+.stage-head .when{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--rose)}
+.stage-head h3{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.1;margin:2px 0 0;color:var(--navy)}
+.stage-head .org{margin:4px 0 0;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+.stage-head .count{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border:1px solid var(--navy);padding:6px 12px}
+.stage .feature{margin-bottom:18px}
+.sub{background:var(--white);border:1px solid var(--line);border-left:2px solid var(--rose);padding:clamp(22px,3vw,32px);display:grid;grid-template-columns:.9fr 1.3fr;gap:10px 36px}
+.sub small{font-size:.64rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose)}
+.sub h4{font-family:var(--display);font-weight:500;font-size:1.9rem;line-height:1.1;margin:4px 0 6px;color:var(--navy)}
+.sub p{margin:0;color:var(--slate);font-size:.94rem}
+.sub ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.sub li{position:relative;padding-left:22px;color:var(--slate);font-size:.94rem}
+.sub li::before{content:"";position:absolute;left:0;top:.85em;width:12px;height:1px;background:var(--gold)}
+.sub .tags{grid-column:1/-1;margin-top:8px}
+@media (max-width:760px){.sub{grid-template-columns:1fr}}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:var(--white)}
+.sk{padding:30px 28px;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.sk:nth-child(3n+1){border-left:0}
+.sk:nth-child(-n+3){border-top:0}
+.sk h3{font-family:var(--display);font-weight:500;font-size:1.45rem;margin:0 0 4px;color:var(--navy)}
+.sk h3 + small{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.sk .tags{margin-top:0}
+.sk.hi{background:var(--blush)}
+.sk.hi .tags span{background:var(--white);border-color:var(--blush-2)}
+
+/* Formation, qualités, intérêts */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
+.trio h3{font-family:var(--display);font-weight:500;font-size:1.6rem;margin:0 0 18px;color:var(--navy);padding-bottom:12px;border-bottom:1px solid var(--gold)}
+.edu div{margin-bottom:20px}
+.edu small{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.edu b{display:block;font-weight:500;color:var(--ink);line-height:1.45;margin-top:2px}
+.edu span{font-size:.88rem;color:var(--slate)}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{display:flex;gap:12px;align-items:baseline;color:var(--slate)}
+.list li::before{content:"";width:5px;height:5px;transform:rotate(45deg);background:var(--rose);flex:none;position:relative;top:-2px}
+
+/* Langues (en dernier) */
+.langs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(50px,7vw,80px)}
+.lg{background:var(--white);border:1px solid var(--line);padding:24px 26px;text-align:center}
+.lg b{display:block;font-family:var(--display);font-weight:500;font-size:1.6rem;color:var(--navy)}
+.lg span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.lg .dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.lg .dots i{width:7px;height:7px;border-radius:50%;background:var(--blush-2)}
+.lg .dots i.on{background:var(--rose)}
+
+/* Contact */
+.contact{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;left:50%;top:-260px;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;border:1px solid rgba(191,159,102,.18)}
+.contact .wrap{position:relative;padding-top:clamp(90px,12vw,150px);padding-bottom:50px}
+.contact .over{color:#e7c3c3}
+.contact h2{font-family:var(--display);font-weight:400;font-size:clamp(3rem,8vw,5.8rem);line-height:1;margin:20px 0 18px}
+.contact h2 em{color:#e7c3c3}
+.contact p{color:#b8c0d2;max-width:48ch;margin:0 auto 38px}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.links a{display:flex;flex-direction:column;gap:2px;min-width:240px;padding:18px 24px;border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;transition:border-color .3s,background .3s}
+.links a:hover{border-color:var(--gold);background:rgba(191,159,102,.08)}
+.links small{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.links span{font-family:var(--display);font-size:1.15rem;word-break:break-all}
+.sign{margin-top:80px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#7f8aa3}
+
+@media (max-width:940px){
+  .cover,.about,.feature{grid-template-columns:1fr}
+  .portrait{width:min(78%,360px)}
+  .portrait .chip{right:-4%}
+  .ribbon .wrap{grid-template-columns:1fr 1fr}
+  .fig:nth-child(3){border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid rgba(255,255,255,.1)}
+  .job{grid-template-columns:1fr;gap:8px}
+  .skills{grid-template-columns:1fr 1fr}
+  .sk,.sk:nth-child(3n+1),.sk:nth-child(-n+3){border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .sk:nth-child(odd){border-left:0}
+  .sk:nth-child(-n+2){border-top:0}
+  .trio{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .projects,.skills,.trio,.langs{grid-template-columns:1fr}
+  .sk,.sk:nth-child(odd){border-left:0}
+  .sk:nth-child(2){border-top:1px solid var(--line)}
+  .nav nav{gap:16px}
+  .sh{grid-template-columns:1fr}
+  .links a{min-width:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <span class="mono">O<i>Y</i></span>
+    <nav aria-label="Sections">
+      <a href="#apropos">À propos</a><a href="#experience">Expérience</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="cover">
+    <div class="portrait">
+      <div class="bg"></div>
+      <div class="ring"></div>
+      <div class="img"><img src="photo.jpg" alt="Portrait de Ouissal Yahyaoui"></div>
+      <div class="chip"><small>Disponible</small><b>Stage PFE · 6 mois</b><span>à partir de février 2027</span></div>
+    </div>
+    <div class="intro">
+      <span class="over">Portfolio · 2026</span>
+      <h1>Ouissal <em>Yahyaoui</em></h1>
+      <p class="role">Ingénieure en génie informatique<span>·</span>Option IA<span>·</span>EHEIM Oujda</p>
+      <p class="pitch">Je conçois des solutions d'intelligence artificielle qui <b>lisent, comprennent et répondent</b>.</p>
+      <div class="actions">
+        <a class="btn dark" href="#contact">Me contacter</a>
+        <a class="btn light" href="#projets">Mes projets</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/ouissal-yahyaoui"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
+        <a href="https://github.com/ouissal-yahyaoui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.9-2.4c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.6 4.7 4.7 0 0 0-.1-3.5s-1.1-.4-3.7 1.4a12.6 12.6 0 0 0-6.6 0C5.7.9 4.6 1.3 4.6 1.3a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 3 8.5c0 5 3 6.3 6 6.6a3 3 0 0 0-.9 2.3V21"/></svg>GitHub</a>
+        <a href="mailto:ouissal.yahyaoui12@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>ouissal.yahyaoui12@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon">
+  <div class="wrap">
+    <div class="fig"><b>5<i>e</i></b><span>année · option IA</span></div>
+    <div class="fig"><b>2</b><span>stages réalisés</span></div>
+    <div class="fig"><b>5</b><span>projets menés</span></div>
+    <div class="fig"><b>6</b><span>mois de PFE recherchés</span></div>
+  </div>
+</div>
+
+<main>
+<section class="sec" id="apropos">
+  <div class="wrap">
+    <div class="sh"><span class="n">01</span><div><span class="over">À propos</span><h2>De Jerada à <em>l'intelligence artificielle</em></h2></div></div>
+    <div class="about">
+      <blockquote>Ce qui me passionne, c'est le moment où une machine passe d'un texte brut à une réponse utile.</blockquote>
+      <div class="txt">
+        <p>Originaire de l'Oriental marocain, j'ai obtenu mon baccalauréat en sciences physiques au lycée El Fath de Jerada, puis rejoint l'<strong>EHEIM d'Oujda</strong> en génie informatique. Je suis aujourd'hui en dernière année, dans l'option <strong>intelligence artificielle</strong>.</p>
+        <p>Mon expérience couvre le <strong>traitement intelligent de documents</strong>, les <strong>chatbots RAG</strong> et le <strong>développement web full-stack</strong>. Je m'engage aussi au-delà des cours&nbsp;: je suis membre du bureau des étudiants et j'ai participé à des forums comme les <strong>MEDays</strong>.</p>
+        <p>Rigoureuse, curieuse et motivée, je recherche un stage PFE de 6 mois à partir de février 2027 pour mettre mes compétences au service de projets innovants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="experience">
+  <div class="wrap">
+    <div class="sh"><span class="n">02</span><div><span class="over">Expérience</span><h2>Expérience <em>professionnelle</em></h2></div></div>
+
+    <article class="stage">
+      <header class="stage-head">
+        <div><span class="when">Févr. – août 2026 · 6 mois</span><h3>Stagiaire en développement logiciel et IA</h3><p class="org">Estatmar · Casablanca</p></div>
+        <span class="count">2 projets réalisés</span>
+      </header>
+      <article class="feature" id="medextract">
+      <div>
+        <span class="over">Projet 1 · Intelligence artificielle</span>
+        <h3>MedExtract <em>AI</em></h3>
+        <p>Une solution de traitement intelligent de documents médicaux. Elle lit des documents hétérogènes, en extrait l'information utile et permet de les interroger en langage naturel.</p>
+        <p>Mon rôle&nbsp;: contribuer à la chaîne de traitement, intégrer le chatbot RAG avec Ollama et mettre en place le suivi patient.</p>
+        <div class="tags"><span>RAG</span><span>Ollama</span><span>NLP</span><span>Python</span></div>
+      </div>
+      <ol class="steps" aria-label="Parcours d'un document dans MedExtract AI">
+        <li><i>1</i><div><b>Document médical</b><span>Le document entre dans la chaîne de traitement.</span></div></li>
+        <li><i>2</i><div><b>Extraction</b><span>Les informations clés sont repérées et structurées.</span></div></li>
+        <li><i>3</i><div><b>Recherche</b><span>Les passages qui répondent à la question sont retrouvés.</span></div></li>
+        <li><i>4</i><div><b>Réponse via Ollama</b><span>Un modèle de langage local formule la réponse.</span></div></li>
+        <li><i>5</i><div><b>Suivi patient</b><span>L'historique du patient reste consultable.</span></div></li>
+      </ol>
+    </article>
+      <article class="sub">
+        <div><small>Projet 2 · Full-stack</small><h4>QuoteFlow</h4><p>Plateforme web intelligente de gestion de devis.</p></div>
+        <ul>
+          <li>Backend Java / Spring Boot&nbsp;: API REST, architecture en couches, sécurité JWT, persistance avec MySQL, JPA et Hibernate.</li>
+          <li>Frontend React et Vite, génération automatique de documents PDF avec iText 7.</li>
+          <li>Automatisation des notifications et e-mails avec n8n, documentation de l'API avec Swagger, versioning avec GitHub.</li>
+        </ul>
+        <div class="tags"><span>Spring Boot</span><span>MySQL</span><span>React</span><span>Vite</span><span>iText 7</span><span>n8n</span><span>Swagger</span></div>
+      </article>
+    </article>
+
+    <article class="stage">
+      <header class="stage-head">
+        <div><span class="when">Août – sept. 2025 · 2 mois</span><h3>Stagiaire en développement web</h3><p class="org">Province de Jerada</p></div>
+        <span class="count">1 projet réalisé</span>
+      </header>
+      <article class="sub">
+        <div><small>Projet · Application web</small><h4>Suivi des travaux publics</h4><p>Application de gestion et de suivi des projets de travaux publics.</p></div>
+        <ul>
+          <li>Participation à la conception de l'application.</li>
+          <li>Analyse des besoins fonctionnels et définition des règles métier.</li>
+          <li>Digitalisation des processus administratifs liés à la sélection des entreprises candidates.</li>
+        </ul>
+        <div class="tags"><span>Analyse des besoins</span><span>Règles métier</span><span>Web</span></div>
+      </article>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="projets">
+  <div class="wrap">
+    <div class="sh"><span class="n">03</span><div><span class="over">Projets académiques</span><h2>Projets <em>à l'EHEIM</em></h2></div></div>
+    <div class="projects">
+      <article class="proj"><small>Projet de fin d'année · oct. 2024 – avr. 2025</small><h3>Gestion hospitalière intelligente</h3><p>Application web basée sur une architecture microservices&nbsp;: analyse des besoins, modélisation du système, dossiers médicaux, profils médecins et patients, prise et gestion des rendez-vous.</p><div class="tags"><span>Microservices</span><span>UML</span><span>Web</span></div></article>
+      <article class="proj"><small>Projet de synthèse · nov. 2024 – mai 2025</small><h3>Système de gestion de Riad</h3><p>Gestion des réservations, des services, des utilisateurs et de la facturation, réalisé en équipe&nbsp;: analyse des besoins, coordination et respect des délais.</p><div class="tags"><span>C++</span><span>Java</span><span>PHP</span><span>HTML/CSS/JS</span><span>MySQL</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="competences">
+  <div class="wrap">
+    <div class="sh"><span class="n">04</span><div><span class="over">Compétences</span><h2>Expertise <em>technique</em></h2></div></div>
+    <div class="skills">
+      <div class="sk hi"><h3>Intelligence artificielle</h3><small>Spécialité</small><div class="tags"><span>Scikit-learn</span><span>XGBoost</span><span>NLP</span><span>RAG</span><span>Ollama</span></div></div>
+      <div class="sk"><h3>Langages</h3><small>Programmation</small><div class="tags"><span>Python</span><span>Java</span><span>C</span><span>C++</span><span>PHP</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML/CSS</span></div></div>
+      <div class="sk"><h3>Frameworks</h3><small>Web &amp; mobile</small><div class="tags"><span>Spring Boot</span><span>JPA/Hibernate</span><span>FastAPI</span><span>React</span><span>Vite</span><span>React Native</span><span>.NET</span><span>Bootstrap</span></div></div>
+      <div class="sk"><h3>Données</h3><small>Bases &amp; modélisation</small><div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>UML</span></div></div>
+      <div class="sk"><h3>DevOps</h3><small>Automatisation</small><div class="tags"><span>Docker</span><span>Jenkins</span><span>Ansible</span><span>AWS</span><span>n8n</span></div></div>
+      <div class="sk"><h3>Architecture</h3><small>Bonnes pratiques</small><div class="tags"><span>API REST</span><span>JWT</span><span>Microservices</span><span>Swagger</span><span>Git/GitHub</span><span>SOLID</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="profil">
+  <div class="wrap">
+    <div class="sh"><span class="n">05</span><div><span class="over">Profil</span><h2>Formation <em>et personnalité</em></h2></div></div>
+    <div class="trio">
+      <div class="edu">
+        <h3>Formation</h3>
+        <div><small>2022 – aujourd'hui</small><b>Diplôme d'ingénieure d'État en génie informatique, option IA</b><span>EHEIM, Oujda</span></div>
+        <div><small>2021 – 2022</small><b>Baccalauréat en sciences physiques, option français</b><span>Lycée El Fath, Jerada</span></div>
+      </div>
+      <div>
+        <h3>Qualités</h3>
+        <ul class="list">
+          <li>Esprit d'analyse et résolution de problèmes</li>
+          <li>Rigueur et sens de l'organisation</li>
+          <li>Autonomie et esprit d'initiative</li>
+          <li>Travail en équipe et leadership</li>
+          <li>Communication et créativité</li>
+          <li>Adaptabilité et apprentissage rapide</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Centres d'intérêt</h3>
+        <ul class="list">
+          <li>Intelligence artificielle et nouvelles technologies</li>
+          <li>Voyage et découverte de nouvelles cultures</li>
+          <li>Photographie</li>
+        </ul>
+      </div>
+    </div>
+    <div class="langs" aria-label="Langues">
+      <div class="lg"><b>Arabe</b><span>Courant</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      <div class="lg"><b>Français</b><span>Courant</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      <div class="lg"><b>Anglais</b><span>Intermédiaire</span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <span class="over">Contact</span>
+    <h2>Travaillons <em>ensemble</em></h2>
+    <p>Disponible pour un stage PFE de 6 mois en intelligence artificielle à partir de février 2027.</p>
+    <div class="links">
+      <a href="mailto:ouissal.yahyaoui12@gmail.com"><small>E-mail</small><span>ouissal.yahyaoui12@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/ouissal-yahyaoui"><small>LinkedIn</small><span>ouissal-yahyaoui</span></a>
+      <a href="https://github.com/ouissal-yahyaoui"><small>GitHub</small><span>ouissal-yahyaoui</span></a>
+    </div>
+    <div class="sign"><span>Ouissal Yahyaoui · Oujda, Maroc</span><span>Portfolio 2026</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
